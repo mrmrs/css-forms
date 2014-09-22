@@ -16,7 +16,8 @@ View on [npm](https://www.npmjs.org/package/css-forms)
 ## File Size
 
 16B forms.css
-0B Jforms.min.css
+0B Jforms.min.css 
+29B minified and gzipped
 
 ## The Code
 ```
