@@ -1,38 +1,44 @@
 {
   "name": "css-forms",
-  "style": "forms.css",
-  "version": "1.0.8",
-  "homepage": "http://github.com/mrmrs/css-forms",
-  "description": "Css module of single purpose classes for forms",
+  "version": "2.0.0",
+  "description": "Functional CSS for forms",
+  "style": "dist/forms.css",
+  "main": "dist/forms.css",
+  "exports": {
+    ".": "./dist/forms.css",
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "prepublishOnly": "npm run build"
+  },
   "keywords": [
     "css",
-    "oocss",
-    "forms"
+    "forms",
+    "utility",
+    "single-purpose",
+    "functional-css"
   ],
-  "css-forms": {
+  "homepage": "https://github.com/mrmrs/css-forms",
+  "repository": {
     "type": "git",
-    "url": "http://github.com/mrmrs/css-forms.git"
+    "url": "https://github.com/mrmrs/css-forms.git"
   },
   "bugs": {
-    "url": "https://github.com/mrmrs/css-forms/issues",
-    "email": "hi@mrmrs.cc"
+    "url": "https://github.com/mrmrs/css-forms/issues"
   },
   "author": {
     "name": "Adam Morse",
     "email": "hi@mrmrs.cc",
     "url": "http://mrmrs.cc"
   },
-  "contributors": [
-    {
-      "name": "Adam Morse",
-      "email": "hi@mrmrs.cc"
-    }
-  ],
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "lightningcss": "^1"
-  },
-  "scripts": {
-    "build": "node build.js"
   }
 }
