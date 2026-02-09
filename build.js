@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { transform } = require('lightningcss');
 
-const srcFile = path.join(__dirname, 'src', 'css-forms.css');
+const srcFile = path.join(__dirname, 'src', 'forms.css');
 const distDir = path.join(__dirname, 'dist');
 
 // Read source
@@ -15,22 +15,22 @@ if (!fs.existsSync(distDir)) {
 
 // Unminified — just normalize formatting
 const { code: unminified } = transform({
-  filename: 'css-forms.css',
+  filename: 'forms.css',
   code: Buffer.from(source),
   minify: false,
 });
 
-fs.writeFileSync(path.join(distDir, 'css-forms.css'), unminified);
+fs.writeFileSync(path.join(distDir, 'forms.css'), unminified);
 
 // Minified
 const { code: minified } = transform({
-  filename: 'css-forms.css',
+  filename: 'forms.css',
   code: Buffer.from(source),
   minify: true,
 });
 
-fs.writeFileSync(path.join(distDir, 'css-forms.min.css'), minified);
+fs.writeFileSync(path.join(distDir, 'forms.min.css'), minified);
 
 console.log('Build complete:');
-console.log(`  dist/css-forms.css     ${unminified.length} bytes`);
-console.log(`  dist/css-forms.min.css ${minified.length} bytes`);
+console.log(`  dist/forms.css     ${unminified.length} bytes`);
+console.log(`  dist/forms.min.css ${minified.length} bytes`);
